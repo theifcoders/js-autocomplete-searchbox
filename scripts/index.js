@@ -265,7 +265,7 @@ function onSearch (e) {
     for (let i = 1; i < tr.length; i++) {
         const td = tr[i].getElementsByTagName('td')[1];
         const currentText = td.innerText;
-        if(currentText.toLowerCase().includes(e.value)) {
+        if(currentText.toLowerCase().includes(e.value.toLowerCase())) {
             tr[i].style.display = '';
         }else{
             tr[i].style.display = 'none';
