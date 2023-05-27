@@ -1,5 +1,5 @@
-# JS Search Box
-A customizable JavaScript component for adding a user-friendly search feature to websites and applications. It enables real-time search results and suggestions, allowing users to quickly find desired information.
+# JS AutoSuggestion Search Box
+Search functionality on websites and applications. The component enables real-time search results and suggestions, empowering users to find desired information quickly and effortlessly. The repository includes code files and documentation to seamlessly integrate this user-friendly search feature into your projects.
 
 ## Project Layout
 ```
