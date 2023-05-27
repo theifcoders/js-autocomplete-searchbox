@@ -34,3 +34,22 @@ table, th, td {
 .myTable {
     margin-top: 8px;
 }
+
+.suggestionBox {
+    width: 318px;
+    max-height: 100px;
+    overflow-y: auto;
+
+    border: 1px solid black;
+    border-radius: 4px;
+
+    margin-top: 4px;
+}
+.suggestionItem {
+    background-color: rgba(204, 204, 204, 0.5);
+
+    padding: 4px;
+    margin: 4px 0px;
+
+    cursor: pointer;
+}

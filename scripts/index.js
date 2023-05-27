@@ -272,3 +272,43 @@ function onSearch (e) {
         }
     }
 }
+
+function onSearchAutoSuggest(e) {
+  const suggestionBox = document.getElementById('suggestionBox');
+  
+  // Remove all suggestions
+  const suggestionItemList = suggestionBox.getElementsByTagName('div');
+  for(let i = 0; i < suggestionItemList.length; i++) {
+    suggestionItemList[i].style.display = 'none'
+  }
+
+  if(e.value !== '') {
+    suggestionBox.setAttribute('class', 'suggestionBox');
+
+    for(let i = 0; i < data.length; i++) {
+      if(data[i].name.toLowerCase().includes(e.value.toLowerCase())) {
+        const suggestionItem = document.createElement('div');
+        suggestionItem.setAttribute('id', 'suggestionItem');
+        suggestionItem.setAttribute('class', 'suggestionItem');
+      
+        suggestionItem.innerText = data[i].name;
+        suggestionItem.setAttribute('onclick', 'onSearchItemClick(this.innerText)');
+      
+        suggestionBox.appendChild(suggestionItem);
+      }
+    }
+  }else{
+    suggestionBox.removeAttribute('class');
+    onSearch({value: ''})
+  }
+}
+
+function onSearchItemClick(text) {
+  const searchBox = document.getElementById('mysearchBox');
+  searchBox.value = text;
+
+  // Close the suggestion box after user clicks on the suggestion item
+  onSearchAutoSuggest({value: ''})
+
+  onSearch({value: text})
+}
